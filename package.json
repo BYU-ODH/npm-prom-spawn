@@ -1,0 +1,25 @@
+{
+  "name": "prom-spawn",
+  "version": "0.0.1",
+  "description": "Spawns processes that can be used in chained promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byu-odh/prom-spawn"
+  },
+  "keywords": [
+    "promise",
+    "spawn",
+    "child_process"
+  ],
+  "author": "Ian Hunter <ianhunter@byu.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byu-odh/prom-spawn/issues"
+  },
+  "homepage": "https://github.com/byu-odh/prom-spawn",
+  "engines": {"node": ">=0.11.13"}
+}
