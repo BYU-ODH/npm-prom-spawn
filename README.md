@@ -19,5 +19,5 @@ p('rm', '-rf', 'tmpfolder')().then(function() {
 var p = require('prom-spawn');
 p('createdb', 'mydb', '-T', 'template_db')()
   .then(p('psql', 'mydb', '-c', 'DELETE FROM mytable WHERE 1=1'))
-  .then(p('echo', 'wow', '>>', 'doge.txt'));
+  .then(('sed','-i','s/good/such wow/g','doge.txt'));
 ```
