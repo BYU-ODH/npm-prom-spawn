@@ -10,13 +10,17 @@ module.exports = function(cmd, argv) {
   return function() {
     return new Promise(function(resolve, reject) {
       var run = spawn(cmd, args.slice(1));
+      var data = '';
 
       run.on('close', function(code) {
         if(code !== 0) { throwErr(code); }
-        resolve();
+        resolve(data);
       });
       run.stderr.on('data', function(buffer) {
         console.error(String(buffer));
+      });
+      run.stdout.on('data', function(buffer) {
+        data += buffer;
       });
 
       run.on('error', throwErr);

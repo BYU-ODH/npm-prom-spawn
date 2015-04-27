@@ -1,6 +1,6 @@
 {
   "name": "prom-spawn",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Spawns processes that can be used in chained promises",
   "main": "index.js",
   "scripts": {

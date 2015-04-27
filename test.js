@@ -16,4 +16,14 @@ describe('prom_spawn', function() {
   it('should be resolved on success', function() {
     expect(prom_spawn('exit',0)()).to.eventually.be.resolved;
   });
+
+  it('should resolve with the stdout of the command', function(done) {
+    var text = 'hello';
+    prom_spawn('printf',text)().then(function(data) {
+      expect(data).to.equal(text);
+      done();
+    }).catch(function(error) {
+      console.error(error);
+    });
+  });
 });
