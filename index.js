@@ -22,12 +22,15 @@ module.exports = function(cmd, argv) {
       run.on('error', throwErr);
 
       function throwErr(error) {
-        if(error instanceof Error) { throw error; }
+        if(error instanceof Error) {
+          reject(error);
+          return;
+        }
 
         var msg = "Error running command '" + args.join(' ') +
                    "'. Error code: " + error;
 
-        throw new Error(msg);
+        reject(new Error(msg));
       }
     });
   }
